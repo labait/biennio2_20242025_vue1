@@ -1,11 +1,14 @@
 <script setup>
+import Navbar from './components/Navbar.vue';
+import Intro from './components/Intro.vue';
+import Works from './components/Works.vue';
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 flex items-center justify-center">
-    <h1 class="text-4xl font-bold text-blue-500">
-      Hello Tailwind with Vue!
-    </h1>
+  <div>
+    <Navbar />
+    <Intro />
+    <Works />
   </div>
 </template>
 
