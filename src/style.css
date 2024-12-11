@@ -6,3 +6,10 @@
 main {
   border: 1px solid red;
 }
+
+a.link {
+  font-weight: 600;
+  color: #f8a4ff;
+  display: inline-block;
+  border-bottom: 1px solid rgba(248, 164, 255, .8);
+}
