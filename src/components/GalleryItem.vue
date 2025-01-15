@@ -20,9 +20,10 @@ defineProps({
 
 <style lang="scss" scoped>
   .gallery-item {
-    border: 1px solid red;
     img {
       filter: grayscale(100%);
+      display: inline-block;
+      border-radius: 5px;
     }
   }
 </style>

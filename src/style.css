@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+  --primary: #f8a4ff;
+}
+
 main {
   /* border: 1px solid red; */
   @apply text-lg;
 }
 
+.page-title {
+  @apply text-2xl font-bold mb-4;
+}
+
 a.link {
   font-weight: 600;
-  color: #f8a4ff;
+  color: var(--primary);
 }

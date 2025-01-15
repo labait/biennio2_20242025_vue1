@@ -1,5 +1,5 @@
 <script setup></script>
 
 <template>
-  works
+  <div class="page-title">Works</div>
 </template>

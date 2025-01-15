@@ -1,11 +1,10 @@
 <script setup>
+import { inject, onMounted } from 'vue';
 import GalleryItem from './GalleryItem.vue';
 
-defineProps({
-  works: {
-    type: Array,
-    default: []
-  }
+const data = inject('data');
+onMounted(() => {
+  console.log("data", data.value);
 });
 
 </script>
@@ -13,13 +12,13 @@ defineProps({
 
 <template>
   <div class="gallery mb-8">
-    <div v-if="works.length > 0">
-     <div class="grid sm:grid-cols-1 md:grid-cols-3  gap-8">
-      <GalleryItem v-for="work in works" :key="work.id" :work="work" />
+    <div v-if="data?.works?.length > 0">
+     <div class="grid sm:grid-cols-1 md:grid-cols-2  gap-8">
+      <GalleryItem v-for="work in data.works" :key="work.id" :work="work" />
     </div>
     </div>
     <div v-else>
-      <p> No works to display. </p>
+      <p> No data to display. </p>
     </div>
   </div>
 </template>

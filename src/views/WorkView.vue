@@ -1,19 +1,13 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const work = ref({});
-
-const props = defineProps({
-  works: {
-    type: Array,
-    required: true
-  }
-});
+const data = inject('data');
 
 onMounted(() => {
-  work.value = props.works.find(work => work.id == route.params.id);
+  work.value = data?.value?.works.find(work => work.id == route.params.id);
 });
 
 </script>
@@ -23,9 +17,9 @@ onMounted(() => {
 <pre v-if="false">
   {{ work }}
 </pre>
-<h1 class="text-2xl font-bold mb-2">
+<div class="page-title">
   {{ work.title }}
-</h1>
+</div>
 <p class="description mb-4">
   {{ work.description }}
 </p>

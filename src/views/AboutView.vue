@@ -1,5 +1,7 @@
 <script setup></script>
 
 <template>
-  about
+  <div class="page-title">
+    About
+  </div>
 </template>

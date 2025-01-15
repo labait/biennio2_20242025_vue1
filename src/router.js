@@ -6,10 +6,10 @@ import WorksView from './views/WorksView.vue'
 import WorkView from './views/WorkView.vue'
 
 const routes = [
-  { path: '/', component: HomeView, name: "home", },
-  { path: '/about', component: AboutView, name: "about", },
-  { path: '/works', component: WorksView, name: "works", },
-  { path: '/work/:id', component: WorkView, name: "work", },
+  { inMenu: true, path: '/', component: HomeView, name: "home", },
+  { inMenu: true, path: '/about', component: AboutView, name: "about", },
+  { inMenu: true, path: '/works', component: WorksView, name: "works", },
+  { inMenu: false, path: '/work/:id', component: WorkView, name: "work", },
 ]
 
 const router = createRouter({

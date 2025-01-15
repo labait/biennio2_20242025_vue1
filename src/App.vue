@@ -1,11 +1,12 @@
 <script setup>
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, provide } from 'vue';
 import Links from './components/Links.vue';
 import Footer from './components/Footer.vue';
 
 const loading = ref(true);
-const works = ref([]);
+const data = ref({});
+provide('data', data);
 
 import { useRouter, RouterLink } from 'vue-router'
 const router = useRouter();
@@ -13,8 +14,8 @@ const router = useRouter();
 const loadData = async () => {
   const url = '/data.json';
   const response = await fetch(url);
-  const data = await response.json();
-  works.value = data;
+  const json = await response.json();
+  data.value = json;
   setTimeout(() => {
     loading.value = false;
   }, 500);
@@ -24,6 +25,7 @@ onMounted(() => {
   console.log("gallery component mounted");
   loadData();
 });
+
 
 
 const shuffle = (array) => { 
@@ -37,7 +39,7 @@ const shuffle = (array) => {
 
 const handleClick = () => {
   //works.value.shift();
-  works.value = shuffle(works.value);
+  data.value.works = shuffle(data.value.works);
   console.log("button clicked");
 }
 
@@ -54,12 +56,12 @@ const handleClick = () => {
   </div>
   <div v-else class="container">
     <nav class="mb-8">
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink :to="{ name: 'about' }">About</RouterLink>
-      <RouterLink :to="{ name: 'works' }">Works</RouterLink>
+      <template v-for="route in router.options.routes.filter(route => route.inMenu)" :key="route.name">
+        <RouterLink :to="route.path" :class="{ 'active': $route.path === route.path }">{{ route.name }}</RouterLink>
+      </template>
     </nav>
     <div class="mb-8">
-      <RouterView :works="works"/>
+      <RouterView/>
     </div>
     <Links class="section"/>
     <Footer class="section"/>
@@ -82,6 +84,9 @@ nav {
   @apply mt-4;
   a {
     @apply text-xl mr-4;
+    &.active {
+      color: var(--primary);
+    }
   }
 }
 </style>
