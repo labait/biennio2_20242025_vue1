@@ -13,17 +13,11 @@ defineProps({
     <RouterLink :to="{ name: 'work', params: { id: work.id } }">
       <h3 class="text-xl font-medium mb-2"> {{ work.title }} </h3>
       <p class="mb-2"> {{ work.description }} </p>
-      <img class="img-fluid" :src="work.img" alt="work.title" />
+      <img class="image img-fluid" :src="work.img" alt="work.title" />
     </RouterLink>
   </div>
 </template>
 
 <style lang="scss" scoped>
-  .gallery-item {
-    img {
-      filter: grayscale(100%);
-      display: inline-block;
-      border-radius: 5px;
-    }
-  }
+
 </style>

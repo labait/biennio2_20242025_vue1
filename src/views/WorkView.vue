@@ -23,7 +23,7 @@ onMounted(() => {
 <p class="description mb-4">
   {{ work.description }}
 </p>
-<img class="img-fluid mb-4" :src="work.img" alt="work.title" />
+<img class="image img-fluid mb-4" :src="work.img" alt="work.title" />
 
 <RouterLink :to="{ name: 'home' }">Back to home</RouterLink>
 </template>
