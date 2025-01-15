@@ -27,6 +27,6 @@ defineProps({
 <style lang="scss" scoped>
   .gallery {
     margin-top: 80px;
-    border: 1px solid red;
+    //border: 1px solid red;
   }
 </style>
