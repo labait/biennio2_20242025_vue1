@@ -2,7 +2,10 @@
 import GalleryItem from './GalleryItem.vue';
 
 defineProps({
-  items: Array
+  items: {
+    type: Array,
+    default: []
+  }
 });
 
 </script>

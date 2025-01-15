@@ -1,17 +1,14 @@
 <script setup>
 
 import { ref, onMounted } from 'vue';
-import Navbar from './components/Navbar.vue';
-import Intro from './components/Intro.vue';
-import Gallery from './components/Gallery.vue';
-import About from './components/About.vue';
-import Footer from './components/Footer.vue';
 import Links from './components/Links.vue';
-import data from '../public/data.json';
+import Footer from './components/Footer.vue';
 
 const loading = ref(true);
 const items = ref([]);
 
+import { useRouter, RouterLink } from 'vue-router'
+const router = useRouter();
 
 const loadData = async () => {
   const url = '/data.json';
@@ -58,11 +55,14 @@ const handleClick = () => {
     </div>
   </div>
   <div v-else class="container">
-    <Navbar class="section"/>
-    <Intro class="section"/>
-    <a @click="handleClick">button</a>
-    <Gallery :items="items" class="section"/>
-    <About class="section"/>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink :to="{ name: 'about' }">About</RouterLink>
+      <RouterLink :to="{ name: 'works' }">Works</RouterLink>
+    </nav>
+    <div>
+      <RouterView/>
+    </div>
     <Links class="section"/>
     <Footer class="section"/>
   </div>
