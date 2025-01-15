@@ -3,12 +3,19 @@
 import Intro from '../components/Intro.vue';
 import Gallery from '../components/Gallery.vue';
 import About from '../components/About.vue';
+
+defineProps({
+  works: {
+    type: Array,
+    default: []
+  }
+});
 </script>
 
 <template>
   home
   <Intro class="section"/>
   <a @click="handleClick">button</a>
-  <Gallery :items="items" class="section"/>
+  <Gallery :works="works" class="section"/>
   <About class="section"/>
 </template>

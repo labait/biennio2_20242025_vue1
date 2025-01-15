@@ -2,7 +2,7 @@
 import GalleryItem from './GalleryItem.vue';
 
 defineProps({
-  items: {
+  works: {
     type: Array,
     default: []
   }
@@ -12,19 +12,19 @@ defineProps({
 
 
 <template>
-  <div class="gallery">
-    <div v-if="items.length > 0">
+  <div class="gallery mb-8">
+    <div v-if="works.length > 0">
      <div class="grid sm:grid-cols-1 md:grid-cols-3  gap-8">
-      <GalleryItem v-for="item in items" :key="item.id" :item="item" />
+      <GalleryItem v-for="work in works" :key="work.id" :work="work" />
     </div>
     </div>
     <div v-else>
-      <p> No items to display. </p>
+      <p> No works to display. </p>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
   .gallery {
     margin-top: 80px;
     border: 1px solid red;

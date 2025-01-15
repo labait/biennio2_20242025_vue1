@@ -5,7 +5,7 @@ import Links from './components/Links.vue';
 import Footer from './components/Footer.vue';
 
 const loading = ref(true);
-const items = ref([]);
+const works = ref([]);
 
 import { useRouter, RouterLink } from 'vue-router'
 const router = useRouter();
@@ -14,7 +14,7 @@ const loadData = async () => {
   const url = '/data.json';
   const response = await fetch(url);
   const data = await response.json();
-  items.value = data;
+  works.value = data;
   setTimeout(() => {
     loading.value = false;
   }, 500);
@@ -36,8 +36,8 @@ const shuffle = (array) => {
 
 
 const handleClick = () => {
-  //items.value.shift();
-  items.value = shuffle(items.value);
+  //works.value.shift();
+  works.value = shuffle(works.value);
   console.log("button clicked");
 }
 
@@ -61,7 +61,7 @@ const handleClick = () => {
       <RouterLink :to="{ name: 'works' }">Works</RouterLink>
     </nav>
     <div>
-      <RouterView/>
+      <RouterView :works="works"/>
     </div>
     <Links class="section"/>
     <Footer class="section"/>
