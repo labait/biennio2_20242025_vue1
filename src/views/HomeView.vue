@@ -13,7 +13,6 @@ defineProps({
 </script>
 
 <template>
-  home
   <Intro class="section"/>
   <a @click="handleClick">button</a>
   <Gallery :works="works" class="section"/>

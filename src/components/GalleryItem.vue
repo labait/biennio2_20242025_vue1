@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 defineProps({
   work: Object
@@ -9,9 +10,11 @@ defineProps({
 
 <template>
   <div class="gallery-item">
-    <h3 class="text-xl font-medium mb-2"> {{ work.title }} </h3>
-    <p class="mb-2"> {{ work.description }} </p>
-    <img class="img-fluid" :src="work.img" alt="work.title" />
+    <RouterLink :to="{ name: 'work', params: { id: work.id } }">
+      <h3 class="text-xl font-medium mb-2"> {{ work.title }} </h3>
+      <p class="mb-2"> {{ work.description }} </p>
+      <img class="img-fluid" :src="work.img" alt="work.title" />
+    </RouterLink>
   </div>
 </template>
 

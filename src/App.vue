@@ -41,8 +41,6 @@ const handleClick = () => {
   console.log("button clicked");
 }
 
-
-
 </script>
 
 
@@ -55,12 +53,12 @@ const handleClick = () => {
     </div>
   </div>
   <div v-else class="container">
-    <nav>
+    <nav class="mb-8">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink :to="{ name: 'about' }">About</RouterLink>
       <RouterLink :to="{ name: 'works' }">Works</RouterLink>
     </nav>
-    <div>
+    <div class="mb-8">
       <RouterView :works="works"/>
     </div>
     <Links class="section"/>
@@ -78,5 +76,12 @@ const handleClick = () => {
 }
 .loading-container {
   @apply flex justify-center items-center h-screen;
+}
+
+nav {
+  @apply mt-4;
+  a {
+    @apply text-xl mr-4;
+  }
 }
 </style>
