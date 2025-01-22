@@ -54,6 +54,8 @@ const handleClick = () => {
         <h1>Loading...</h1>
     </div>
   </div>
+
+
   <div v-else class="container">
     <nav class="mb-8">
       <template v-for="route in router.options.routes.filter(route => route.inMenu)" :key="route.name">

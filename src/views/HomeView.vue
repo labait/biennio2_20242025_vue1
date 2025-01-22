@@ -6,7 +6,6 @@ import About from '../components/About.vue';
 import { onMounted, inject, provide } from 'vue';
 
 const data = inject('data');
-provide('data', data);
 
 
 </script>
@@ -14,6 +13,6 @@ provide('data', data);
 <template>
   <Intro class="section"/>
   <a @click="handleClick">button</a>
-  <Gallery class="section"/>
+  <Gallery class="section" :works="data.works.filter(work => work.inHome)" />
   <About class="section"/>
 </template>

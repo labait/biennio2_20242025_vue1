@@ -2,9 +2,15 @@
 import { inject, onMounted } from 'vue';
 import GalleryItem from './GalleryItem.vue';
 
-const data = inject('data');
+const props = defineProps({
+  works: {
+    type: Array,
+    required: true
+  }
+});
+
 onMounted(() => {
-  console.log("data", data.value);
+  console.log("works", props.works);
 });
 
 </script>
@@ -12,9 +18,9 @@ onMounted(() => {
 
 <template>
   <div class="gallery mb-8">
-    <div v-if="data?.works?.length > 0">
+    <div v-if="props.works?.length > 0">
      <div class="grid sm:grid-cols-1 md:grid-cols-2  gap-8">
-      <GalleryItem v-for="work in data.works" :key="work.id" :work="work" />
+      <GalleryItem v-for="work in works" :key="work.id" :work="work" />
     </div>
     </div>
     <div v-else>

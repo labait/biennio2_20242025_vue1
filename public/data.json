@@ -1,10 +1,12 @@
 {
+  "about": " Welcome to my About page! I am a classic frontend designer dedicated to attracting new customers by focusing on modernity, great design, and best-in-class technical solutions. My mission is to create visually stunning and highly functional websites that stand out in the digital landscape. Join me on my journey to bring your vision to life with cutting-edge technology and innovative design.",
   "works": [
     {
       "id": 1,
       "title": "Project 1",
       "description": "A comprehensive project that explores advanced CSS techniques and responsive design principles.",
-      "img": "https://unsplash.it/1920/1080?random&i=1"
+      "img": "https://unsplash.it/1920/1080?random&i=1",
+      "inHome": true
     },
     {
       "id": 2,
@@ -16,7 +18,8 @@
       "id": 3,
       "title": "Project 3",
       "description": "A detailed case study on the implementation of RESTful APIs and backend services.",
-      "img": "https://unsplash.it/1920/1080?random&i=3"
+      "img": "https://unsplash.it/1920/1080?random&i=3",
+      "inHome": true
     },
     {
       "id": 4,
