@@ -7,7 +7,6 @@ import { onMounted, inject, provide } from 'vue';
 
 const data = inject('data');
 
-
 </script>
 
 <template>
