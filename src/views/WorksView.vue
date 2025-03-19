@@ -8,5 +8,5 @@ const data = inject('data');
 <template>
   <div class="page-title">Works</div>
 
-  <Gallery :works="data.works" />
+  <Gallery :works="data.records" />
 </template>
