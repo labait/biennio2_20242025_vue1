@@ -12,6 +12,6 @@ const data = inject('data');
 <template>
   <Intro class="section"/>
   <a @click="handleClick">button</a>
-  <Gallery class="section" :works="data.works.filter(work => work.inHome)" />
+  <Gallery class="section" :works="data.records" />
   <About class="section"/>
 </template>
