@@ -14,7 +14,7 @@ const router = useRouter();
 
 const loadData = async () => {
   console.log("loadDataFromAirtable")
-  const api_key = ''
+  const api_key = import.meta.env.VITE_OPENAI_API_KEY
   const response = await fetch('https://api.airtable.com/v0/appsLUJzrevbA7w1m/tbldyS6VYuqDAhxqi', {
     headers: {
       'Authorization': `Bearer ${api_key}`,
